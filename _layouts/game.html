@@ -169,7 +169,7 @@ layout: default
   }
 
   function requestRatings() {
-    var request = {type: "GET", url: "http://itunes.apple.com/rss/customerreviews/id={{ page.id }}/json", processData: true, dataType: "jsonp", async: true};
+    var request = {type: "GET", url: "https://itunes.apple.com/rss/customerreviews/id={{ page.id }}/json", processData: true, dataType: "jsonp", async: true};
     var req = $.ajax(request);
     req.done(handleRatings);
   }
