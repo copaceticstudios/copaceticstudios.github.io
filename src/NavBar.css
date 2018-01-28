@@ -1,0 +1,41 @@
+* {
+  box-sizing: border-box;
+}
+
+nav {
+  margin: 20px;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  background-color: #222;
+  border-radius: 5px;
+  list-style-type: none;
+  overflow: hidden;
+}
+
+ul::after {
+  content: '';
+  display: table;
+  clear: both;
+}
+
+li {
+  float: left;
+}
+
+button {
+  display: inline-block;
+  padding: 14px 16px;
+  margin: 0;
+  outline: none;
+  border: none;
+  background-color: transparent;
+  color: #d8d8d8;
+  font-size: 1em;
+}
+
+button:hover {
+  background-color: #444;
+}

@@ -1,18 +1,42 @@
 import React, { Component } from 'react'
-import logo from './logo.svg'
 import './App.css'
 
+import NavBar from './NavBar'
+
 class App extends Component {
+  state = { page: 'home' }
+
+  handleNavBarSelection = action => {
+    this.setState({ page: action })
+  }
+
   render() {
+    const navBarItems = [
+      { title: 'Home', action: 'home' },
+      { title: 'Games', action: 'games' },
+      { title: 'Support', action: 'support' }
+    ]
+
+    const { page } = this.state
+    let pageElement
+    switch (page) {
+      case 'home':
+        pageElement = <div>Home</div>
+        break
+      case 'games':
+        pageElement = <div>Games</div>
+        break
+      case 'support':
+        pageElement = <div>Support</div>
+        break
+      default:
+        pageElement = <div>Error: page not found</div>
+    }
+
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+        <NavBar items={navBarItems} onSelection={this.handleNavBarSelection} />
+        {pageElement}
       </div>
     )
   }
