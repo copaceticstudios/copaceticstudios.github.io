@@ -10,6 +10,19 @@ class App extends Component {
     this.setState({ page: action })
   }
 
+  renderPage(page) {
+    switch (page) {
+      case 'home':
+        return <div>Home</div>
+      case 'games':
+        return <div>Games</div>
+      case 'support':
+        return <div>Support</div>
+      default:
+        return <div>Error: page not found</div>
+    }
+  }
+
   render() {
     const navBarItems = [
       { title: 'Home', action: 'home' },
@@ -18,25 +31,11 @@ class App extends Component {
     ]
 
     const { page } = this.state
-    let pageElement
-    switch (page) {
-      case 'home':
-        pageElement = <div>Home</div>
-        break
-      case 'games':
-        pageElement = <div>Games</div>
-        break
-      case 'support':
-        pageElement = <div>Support</div>
-        break
-      default:
-        pageElement = <div>Error: page not found</div>
-    }
 
     return (
       <div className="App">
         <NavBar items={navBarItems} onSelection={this.handleNavBarSelection} />
-        {pageElement}
+        {this.renderPage(page)}
       </div>
     )
   }
