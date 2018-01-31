@@ -1,7 +1,17 @@
+import PropTypes from 'prop-types'
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
 import './NavBar.css'
 
 class NavBar extends Component {
+  static propTypes = {
+    items: PropTypes.shape({
+      title: PropTypes.string.isRequired,
+      url: PropTypes.string.isRequired
+    }).isRequired,
+    onSelection: PropTypes.func.isRequired
+  }
+
   handleItemClick = event => {
     event.preventDefault()
     this.props.onSelection(event.target.value)
@@ -14,9 +24,9 @@ class NavBar extends Component {
         <ul>
           {items.map(item => (
             <li key={item.title}>
-              <button value={item.action} onClick={this.handleItemClick}>
+              <Link className="NavBar-link" to={item.url}>
                 {item.title}
-              </button>
+              </Link>
             </li>
           ))}
         </ul>
