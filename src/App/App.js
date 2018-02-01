@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 import './App.css'
 
+import Home from 'Home/Home'
 import NavBar from 'NavBar/NavBar'
 
 export default class App extends Component {
@@ -23,7 +24,7 @@ export default class App extends Component {
             items={navBarItems}
             onSelection={this.handleNavBarSelection}
           />
-          <Route exact={true} path="/" component={() => <div>Home</div>} />
+          <Route exact={true} path="/" component={Home} />
           <Route
             exact={true}
             path="/games"
