@@ -35,6 +35,7 @@ export default class App extends Component {
             path="/support"
             component={() => <div>Support</div>}
           />
+          <footer>© 2018 Michael Kent</footer>
         </div>
       </Router>
     )
