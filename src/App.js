@@ -1,15 +1,12 @@
-import React, { Component } from 'react'
+// @flow
+import * as React from 'react'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 import './App.css'
 
-import Home from 'Home/Home'
-import NavBar from 'NavBar/NavBar'
+import Home from 'pages/Home'
+import NavBar from 'components/NavBar'
 
-export default class App extends Component {
-  handleNavBarSelection = action => {
-    this.setState({ page: action })
-  }
-
+export default class App extends React.Component<{}> {
   render() {
     const navBarItems = [
       { title: 'Home', url: '/' },
@@ -20,10 +17,7 @@ export default class App extends Component {
     return (
       <Router>
         <div className="App">
-          <NavBar
-            items={navBarItems}
-            onSelection={this.handleNavBarSelection}
-          />
+          <NavBar items={navBarItems} />
           <Route exact={true} path="/" component={Home} />
           <Route
             exact={true}
