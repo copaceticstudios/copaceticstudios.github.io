@@ -3,7 +3,7 @@
 }
 
 nav {
-  margin: 20px;
+  margin-bottom: 20px;
 }
 
 ul {
@@ -23,6 +23,10 @@ ul::after {
 
 li {
   float: left;
+}
+
+.NavBar-right {
+  float: right;
 }
 
 .NavBar-link {
