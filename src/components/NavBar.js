@@ -3,7 +3,7 @@ import * as React from 'react'
 import { Link } from 'react-router-dom'
 import './NavBar.css'
 
-export type NavBarItem = { content: string | React.Element<*>, url: string }
+export type NavBarItem = { content: React.Node, url: string }
 
 export default class NavBar extends React.Component<{
   leftItems: Array<NavBarItem>,
